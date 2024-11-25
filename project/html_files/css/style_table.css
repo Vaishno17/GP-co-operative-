@@ -1,0 +1,64 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    grid-gap: 10px;
+    grid-auto-rows: minmax(200px, auto);
+    margin: 20px;
+}
+
+.items {
+    background-color: #3ca9e2;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+input {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    background-color: #eee;
+    padding: 5px 10px;
+  }
+  
+  .no-outline:focus {
+    outline: none;
+  }
+.sub-head {
+    font-size: 30px;
+}
+
+.name_detail {
+    margin: 10px;
+
+}
+
+hr {
+    margin-top: 15px;
+    size: 100px;
+    
+}
+
+#container1 { 
+  border: 2px solid black;
+  border-radius: 15px;
+  display: grid;
+  grid-gap: 50px;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+
+}
+
+#align_A{
+  text-align: right;
+}
+
+#align_B{
+  text-align: left;
+}
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            grid-gap: 20px;
+            grid-auto-rows: minmax(250px, auto);
+
+        }
+
+
+        .items {
+            background-color: lightpink;
+            border: 3px solid lightseagreen;
+            border-radius: 15px;
+        }
+
+        .sub-head {
+            font-size: 25px;
+        }
+
+        .name_detail {
+            margin: 30px;
+
+        }
+
+        hr {
+            margin-top: 15px;
+            size: 100px;
+            
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        .input_table td{
+            height: 150px;
+        }
+        button {
+            margin: 50px 50px 50px 50px;
+            width: 100px;
+            height: 30px;
+        }
+        .container1 tr td{
+           margin: 100px;
+        } 
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1 class="main-head">कर्ज खतावणी </h1>
+    </center>
+    <div class="container">
+
+
+        <div class="items">
+            <center>
+                <p class="sub-head">सभासदचे नाव</p>
+            </center>
+            <div class="name_detail">
+
+                <p>श्री. :-</p>
+                <p>पत्ता :-</p>
+                <p>आधर कार्ड न. :- </p>
+                <p>मो. न. :- </p>
+            </div>
+        </div>
+        <div class="items">
+            <center>
+                <p class="sub-head">जमिनदाराची नावे</p>
+            </center>
+            <div class="name_detail">
+
+                <p>श्री. :-</p>
+                <p>पत्ता :-</p>
+                <p>श्री. :-</p>
+                <p>पत्ता :-</p>
+            </div>
+        </div>
+
+    </div>
+                 
+    </div>
+
+    <hr>
+   
+
+    <div class="main_table">
+        <table id="table" width="100%">
+            <tr style="height: 50px;">
+                <th rowspan="3">तरीख महिना</th>
+                <th rowspan="3" >शेअर्स</th>
+                <th colspan="2" rowspan="2" >दिलेले कर्ज</th>
+                <th colspan="6">कर्ज वसुलिचा तपशील</th>
+                <th colspan="2" rowspan="2">कर्ज बकी</th>
+                
+            </tr>
+            <tr style="height: 50px;">
+
+                <td rowspan="2">वर्गणी</td>
+                <th colspan="2">कर्ज हप्ता</th>
+                <th colspan="2">व्याज</th>
+                <td rowspan="2">ऐकुण वसुल</td>
+
+            </tr>
+            <tr style="height: 70px;">
+               
+                <td>दिर्घ</td>
+                <td>अल्प</td>
+                <td>दिर्घ</td>
+                <td>अल्प</td>
+                <td>दिर्घ</td>
+                <td>अल्प</td>
+                <td>दिर्घ</td>
+                <td>अल्प</td>
+            </tr>
+            <tr class="input_table">
+                <td class="input_box">1</td>
+                <td class="input_box">2</td>
+                <td class="input_box">3</td>
+                <td class="input_box">4</td>
+                <td class="input_box">5</td>
+                <td class="input_box">4</td>
+                <td class="input_box">6</td>
+                <td class="input_box">7</td>
+                <td class="input_box">8</td>
+                <td class="input_box">9</td>
+                <td class="input_box">10</td>
+                <td class="input_box">11</td>
+            </tr>
+          
+
+        </table>
+        <!-- <button type="button" onclick="addRow()">Add row</button> -->
+
+    </div>
+                  <script>
+                    var table =document.getElementById('table');
+                    var cells =table.getElementsByClassName('input_box');
+
+                    for (let i = 0; i < cells.length; i++) {
+                     cells[i].onclick=function(){
+                        if (this.hasAttribute('data-clicked')) {
+                            return;
+                        }
+                                
+                        this.setAttribte('data-clicked','yes');
+                        this.setAttribte('data-text',this.innerHTML);
+
+                        var input =document.createElement('input');
+                        input.setAttribute('type','text');
+                        input.value=this.innerHTML;
+                        input.style.width=this.offsetWidth-(this.clientLeft * 2)+"px";
+                        input.style.height=this.offsetHeight-(this.clientTop * 2)+"px";
+                        input.style.border="0px";
+                        input.style.fontFamily="inherit";
+                        
+                     }
+                        
+                    }
+                  </script>
+
+               <!-- <script>
+                        function addRow() {
+                                      var tableRow = document.getElementById("table");
+                                      var row = tableRow.insertRow(0);
+                                      var cell1 = row.insertCell(0);
+                                      var cell2 = row.insertCell(1);
+                                      var cell3 = row.insertCell(2);
+                                      var cell4 = row.insertCell(3);
+                                      var cell5 = row.insertCell(4);
+                                      var cell6 = row.insertCell(5);
+                                      var cell7 = row.insertCell(6);
+                                      var cell8 = row.insertCell(7);
+                                      var cell9 = row.insertCell(8);
+                                      var cell10 = row.insertCell(9);
+                                      var cell11 = row.insertCell(10);
+                                       cell1.innerHTML = "........";
+                                       cell2.innerHTML = "........";
+                                       cell3.innerHTML = "........";
+                                       cell4.innerHTML = "........";
+                                       cell5.innerHTML = "........";
+                                       cell6.innerHTML = "........";
+                                       cell7.innerHTML = "........";
+                                       cell8.innerHTML = "........";
+                                       cell9.innerHTML = "........";
+                                       cell10.innerHTML = "........";
+                                       cell11.innerHTML = "........";
+                                       
+                        }
+               </script> -->
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style_table.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <center>
+        <h1 class="main-head">कर्ज खतावणी </h1>
+    </center>
+    <div class="container">
+        
+        <div class="items">
+            <center>
+                <p class="sub-head">सभासदचे नाव</p>
+            </center>
+            <div class="name_detail">
+
+                <p>श्री. :- <input type="text"></p>
+                <p>पत्ता :- <input type="text"></p>
+                <p>आधर कार्ड न. :- <input type="text"> </p>
+                <p>मो. न. :- <input type="text"></p>
+            </div>
+        </div>
+        <div class="items">
+            <center>
+                <p class="sub-head">जमिनदाराची नावे</p>
+            </center>
+            <div class="name_detail">
+
+                <p>श्री. :- <input type="text"></p>
+                <p>पत्ता :- <input type="text"></p>
+                <p>श्री. :- <input type="text"></p>
+                <p>पत्ता :- <input type="text"></p>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <form method="POST" name="sample">
+        <b>
+        <div id="container1">
+            <div id="align_A">
+                    <p>तरीख महिना: <input type="date" name="date"  /></p>
+                    <p>दिर्घ कर्ज:<input type="number" name="dirkhar" /></p>
+                    <p>शेअर्स : <input type="number" name="shares"  /></p>
+                    <p>वर्गणी : <input type="number" name="vargani"  /></p>
+                    <p>अल्प कर्ज : <input type="number" name="alkar"  /></p> 
+            </div> 
+            <div id="align_B">        
+                    <p>दिर्घ कर्ज हप्ता: <input type="number" name="dirhaf"  /></p>
+                    <p>अल्प कर्ज हप्ता : <input type="number" name="alhaf"  /></p>
+                    <p>दिर्घ व्याज <input type="number" name="dirvaj" /></p>
+                    <p>अल्प व्याज : <input type="number" name="alvaj" /></p>
+                    <p>दिर्घ कर्ज बकी <input type="number" name="dirbaki" /></p>
+                    <p>अल्प कर्ज बकी : <input type="number" name="albaki" /></p>
+            </div>
+    </div>
+        </b>
+        <br>
+        <input type="button" name="add" value="Add Data" onclick="addData();">
+        
+    <hr>
+
+           <table id="tb1" class="table" width="100%" border="1">
+            <tr style="height: 20px;">
+            <th rowspan="3">तरीख महिना</th>
+            <th rowspan="3" >शेअर्स</th>
+            <th colspan="2" rowspan="2" >दिलेले कर्ज</th>
+            <th colspan="6">कर्ज वसुलिचा तपशील</th>
+            <th colspan="2" rowspan="2">कर्ज बकी</th>
+            <th colspan="2" rowspan="3" >एकूण कर्ज</th>
+            </tr>
+
+            <tr style="height: 50px;">
+
+                <th rowspan="2">वर्गणी</th>
+                <th colspan="2">कर्ज हप्ता</th>
+                <th colspan="2">व्याज</th>
+                <th rowspan="2">ऐकुण वसुल</th>
+            </tr>
+            <tr style="height: 50px;">
+               
+                <td>दिर्घ</td>
+                <td>अल्प</td>
+                <td>दिर्घ</td>
+                <td>अल्प</td>
+                <td>दिर्घ</td>
+                <td>अल्प</td>
+                <td>दिर्घ</td>
+                <td>अल्प</td>
+            </tr>
+        </table>
+
+    </form>
+    <script type="text/javascript">
+       
+
+
+
+        function addData()
+        {
+            var date=document.sample.date.value;
+            var shares=document.sample.shares.value;
+            var dirkhar=document.sample.dirkhar.value;
+            var alkar=document.sample.alkar.value;
+            var vargani=document.sample.vargani.value;
+            var dirhaf=document.sample.dirhaf.value;
+            var alhaf=document.sample.alhaf.value;
+            var dirvaj=document.sample.dirvaj.value;
+            var alvaj=document.sample.alvaj.value;
+            var vasuli;
+            var sum=parseInt(vargani) + parseInt(dirhaf);
+            var dirbaki=document.sample.dirbaki.value;
+            var albaki=document.sample.albaki.value;
+
+
+            var tr=document.createElement('tr');
+    
+            var td1=tr.appendChild(document.createElement('td'));
+            var td2=tr.appendChild(document.createElement('td'));
+            var td3=tr.appendChild(document.createElement('td'));
+            var td4=tr.appendChild(document.createElement('td'));
+            var td5=tr.appendChild(document.createElement('td'));
+            var td6=tr.appendChild(document.createElement('td'));
+            var td7=tr.appendChild(document.createElement('td'));
+            var td8=tr.appendChild(document.createElement('td'));
+            var td9=tr.appendChild(document.createElement('td'));
+            var td10=tr.appendChild(document.createElement('td'));
+            var td11=tr.appendChild(document.createElement('td'));
+            var td12=tr.appendChild(document.createElement('td'));
+
+            td1.innerHTML=date;
+            td2.innerHTML=shares;
+            td3.innerHTML=dirkhar;
+            td4.innerHTML=alkar;
+            td5.innerHTML=vargani;
+            td6.innerHTML=dirhaf;
+            td7.innerHTML=alhaf;
+            td8.innerHTML=dirvaj;
+            td9.innerHTML=alvaj;
+            td10.innerHTML=vasuli;
+            td11.innerHTML=dirbaki;
+            td12.innerHTML=albaki;
+
+            document.getElementById("tb1").appendChild(tr);
+        }
+       
+    </script>
+</body>
+</html>
